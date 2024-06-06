@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title> Palindrome Checker By Raj </title>
+	<style>
+		*{font-size:40px; font-family: Cambria;}
+		body{background-color: azure;}
+	</style>
+
+</head>
+
+<body>
+<center>
+	<h1> Palindrome Checker App </h1>
+	<form onsubmit= "check()">
+		<input type="text" placeholder="Enter First String" id="str" />
+		<br><br>
+		<input type="submit" value="Check"/>
+		<br><br>
+		<h2 id="msg"/>
+
+	</form>
+
+	<script>
+		function check()
+		{
+			event.preventDefault();
+			let str = document.getElementById("str");
+			let msg = document.getElementById("msg");
+
+			if (str.value.trim() == "")
+			{
+				alert("string cannot be empty");
+				msg.innerHTML = "";
+				str.focus();
+				return;
+			}
+			
+			let s = str.value
+			let rs = s.split("").reverse().join("");
+
+			if (s == rs)
+				msg.innerHTML = "Yes It is a Palindrome";
+			else
+				msg.innerHTML = "No:( It is not a palindrome";
+				
+		}
+
+	</script>
+</body>
+</center>
+</html>
